@@ -1,12 +1,14 @@
 Rails.application.routes.draw do
 
+  post 'pets/:id/buy', to: 'pets#buy', as: 'buy_pet'
+
   resources :users
   resources :species
   resources :pets
-  
+
   resources :sessions
   get 'logout', to: 'sessions#destroy', as: 'logout'
-  
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

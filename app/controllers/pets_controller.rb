@@ -1,5 +1,19 @@
 class PetsController < ApplicationController
-  before_action :set_pet, only: [:show, :edit, :update, :destroy]
+  before_action :set_pet, only: [:show, :edit, :update, :destroy, :buy]
+
+
+  def buy
+    #render text: params.inspect
+    ## params[:id] will be ID of the pet we buy
+    ## `@pet` will be setup with the ID automagically
+    ## thanks to `set_pet` method
+    if current_user
+      @pet.user_id = current_user.id
+      @pet.save
+    end
+    redirect_to :back
+  end
+
 
   # GET /pets
   # GET /pets.json
