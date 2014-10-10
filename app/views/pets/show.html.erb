@@ -10,5 +10,7 @@
   <%= @pet.species.name if @pet.species %>
 </p>
 
+<%= image_tag @pet.photo %>
+
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
 <%= link_to 'Back', pets_path %>
