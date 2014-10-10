@@ -19,7 +19,12 @@ class ApplicationController < ActionController::Base
     end
   end
 
+  def user_is_admin
+    current_user && current_user.admin
+  end
+
   # Indicate that the current_user() should be
   # a helper (accessible from views)
   helper_method :current_user
+  helper_method :user_is_admin
 end
