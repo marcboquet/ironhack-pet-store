@@ -5,9 +5,7 @@
   <%= u.email %>
   <br/>
 
-  <% u.pets.each do |pet| %>
-    <%= pet.name %><br/>
-  <% end %>
+  <%= list_of_pets(u) %>
 
   <hr>
 

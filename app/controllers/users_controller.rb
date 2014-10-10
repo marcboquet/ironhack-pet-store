@@ -20,6 +20,14 @@ class UsersController < ApplicationController
     @users = User.all
   end
 
+  def profile
+    if current_user
+      @user = current_user
+    else
+      redirect_to new_session_url, notice: 'You need to be logged in to access this page'
+    end
+  end
+
   private
   def user_params
     params.require(:user).permit(

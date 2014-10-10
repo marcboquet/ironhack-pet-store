@@ -11,10 +11,13 @@
 <div>
   <%=link_to "Pets", pets_url %>
   <%=link_to "Species", species_index_url %>
+  <%=link_to "Users", users_url %>
 </div>
 <div style="float:right;">
   <% if current_user %>
     Welcome, <%= current_user.email %>!
+
+    Visit <%= link_to "Your profile", profile_url %> or
 
     Log out <%= link_to "here", logout_path %>
 

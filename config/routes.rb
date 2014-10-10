@@ -2,6 +2,9 @@ Rails.application.routes.draw do
 
   post 'pets/:id/buy', to: 'pets#buy', as: 'buy_pet'
 
+
+  get 'profile', to: 'users#profile', as: 'profile'
+
   resources :users
   resources :species
   resources :pets
