@@ -9,9 +9,11 @@
 <body>
 
 <div>
-  <%=link_to "Pets", pets_url %>
-  <%=link_to "Species", species_index_url %>
-  <%=link_to "Users", users_url %>
+  <%= link_to "Pets", pets_url %>
+  <%= link_to "Species", species_index_url %>
+  <% if current_user && current_user.admin %>
+    <%=link_to "Users", users_url %>
+  <% end %>
 </div>
 <div style="float:right;">
   <% if current_user %>
