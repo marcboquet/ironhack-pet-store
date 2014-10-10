@@ -7,7 +7,7 @@
 
 <p>
   <strong>Species:</strong>
-  <%= @pet.species_id %>
+  <%= @pet.species.name if @pet.species %>
 </p>
 
 <%= link_to 'Edit', edit_pet_path(@pet) %> |
