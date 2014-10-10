@@ -1,6 +1,6 @@
 class PetsController < ApplicationController
   before_action :set_pet, only: [:show, :edit, :update, :destroy, :buy]
-
+  before_action :check_admin, only: [:edit, :update, :destroy]
 
   def buy
     #render text: params.inspect
