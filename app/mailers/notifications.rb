@@ -17,9 +17,9 @@ class Notifications < ActionMailer::Base
   #
   #   en.notifications.bought_pet.subject
   #
-  def bought_pet
+  def bought_pet email
     @greeting = "Hi"
 
-    mail to: "to@example.org"
+    mail to: email
   end
 end

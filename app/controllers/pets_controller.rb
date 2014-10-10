@@ -10,6 +10,10 @@ class PetsController < ApplicationController
     if current_user
       @pet.user_id = current_user.id
       @pet.save
+
+      # Send the email
+      email = current_user.email
+      Notifications.bought_pet(email).deliver
     end
     redirect_to :back
   end
