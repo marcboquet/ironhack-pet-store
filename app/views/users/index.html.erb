@@ -1,0 +1,14 @@
+<h1>Users</h1>
+
+<% @users.each do |u| %>
+
+  <%= u.email %>
+  <br/>
+
+  <% u.pets.each do |pet| %>
+    <%= pet.name %><br/>
+  <% end %>
+
+  <hr>
+
+<% end %>
