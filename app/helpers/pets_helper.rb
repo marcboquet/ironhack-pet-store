@@ -6,4 +6,13 @@ module PetsHelper
       "NO PHOTO"
     end
   end
+
+  def buy_pet_link pet
+    if pet.user.nil?
+      link_to 'Buy', buy_pet_path(pet), method: :post, data: { confirm: 'Do you want to buy this?' }
+    else
+      "Not for sale, owned by #{pet.user.email}"
+    end
+  end
+
 end
