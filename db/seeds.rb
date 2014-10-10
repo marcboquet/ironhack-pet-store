@@ -5,3 +5,15 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+
+
+species = Species.all
+
+species.each do |s|
+
+  20.times do
+    name = Faker::Name.name
+    Pet.create name: name, species_id: s.id
+  end
+
+end
