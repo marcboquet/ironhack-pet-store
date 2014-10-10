@@ -8,6 +8,20 @@
 </head>
 <body>
 
+<div>
+  <% if current_user %>
+    Welcome, <%= current_user.email %>!
+
+    Log out <%= link_to "here", logout_path %>
+
+  <% else %>
+
+    Log in <%= link_to "here", new_session_path %> or
+    <%= link_to "register", new_user_path %>
+
+  <% end %>
+</div>
+
 <%= yield %>
 
 </body>
