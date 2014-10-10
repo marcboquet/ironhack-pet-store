@@ -82,10 +82,8 @@ Rails.application.configure do
   config.action_mailer.smtp_settings = {
     address: 'smtp.mandrillapp.com',
     port: 587,
-    domain: 'pet-a-porter.dev',
+    domain: 'pet-a-porter.herokuapp.com',
     user_name: 'apalancat',
-    password: 'vj8XFc38hEVoOEkJGTiWBg',
-    authentication: 'plain',
-    enable_starttls_auto: true
+    password: 'vj8XFc38hEVoOEkJGTiWBg'
   }
 end
